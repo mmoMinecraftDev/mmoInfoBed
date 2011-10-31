@@ -1,0 +1,12 @@
+name: mmoInfoBed
+main: mmo.Info.MMOInfoBed
+version: 1.0
+website: http://forums.bukkit.org/threads/
+author: Rycochet <rycochet@rycochet.com>
+depend: [mmoCore,mmoInfo]
+
+description: Adds {bed} to the info tokens
+permissions:
+  mmo.info.bed:
+    description: Allows {bed} to show the player's respawn coords
+    default: op
