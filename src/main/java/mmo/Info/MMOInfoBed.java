@@ -1,7 +1,7 @@
 /*
- * This file is part of mmoMinecraft (https://github.com/mmoMinecraftDev).
+ * This file is part of mmoInfoBed <http://github.com/mmoMinecraftDev/mmoInfoBed>.
  *
- * mmoMinecraft is free software: you can redistribute it and/or modify
+ * mmoInfoBed is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
@@ -17,22 +17,24 @@
 package mmo.Info;
 
 import java.util.HashMap;
+
 import mmo.Core.InfoAPI.MMOInfoEvent;
 import mmo.Core.MMOListener;
 import mmo.Core.MMOPlugin;
 import mmo.Core.util.EnumBitSet;
+
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event.Priority;
 import org.bukkit.event.Event.Type;
 import org.bukkit.event.player.PlayerListener;
 import org.bukkit.event.player.PlayerMoveEvent;
+
 import org.getspout.spoutapi.gui.GenericLabel;
 import org.getspout.spoutapi.gui.Label;
 import org.getspout.spoutapi.player.SpoutPlayer;
 
 public class MMOInfoBed extends MMOPlugin {
-
 	private HashMap<Player, Label> widgets = new HashMap<Player, Label>();
 
 	@Override
@@ -49,7 +51,6 @@ public class MMOInfoBed extends MMOPlugin {
 
 		pm.registerEvent(Type.PLAYER_MOVE,
 				new PlayerListener() {
-
 					@Override
 					public void onPlayerMove(PlayerMoveEvent event) {
 						Player player = event.getPlayer();
@@ -65,7 +66,6 @@ public class MMOInfoBed extends MMOPlugin {
 
 		pm.registerEvent(Type.CUSTOM_EVENT,
 				new MMOListener() {
-
 					@Override
 					public void onMMOInfo(MMOInfoEvent event) {
 						if (event.isToken("bed")) {
