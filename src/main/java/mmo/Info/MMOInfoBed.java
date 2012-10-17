@@ -77,10 +77,13 @@ public class MMOInfoBed extends MMOPlugin implements Listener  {
 
 	public String getBedCoords(Player player) {
 		Location loc = player.getBedSpawnLocation();
-		if (loc.getBlockX() != 0 && loc.getBlockY() != 0 && loc.getBlockZ() != 0) {
-			return String.format("[Bed] x:%d, y:%d, z:%d", (int) loc.getX(), (int) loc.getY(), (int) loc.getZ());
-		} else {
-			return String.format("BedSpawn coords not avaible");
+		if (player.getBedSpawnLocation()!= null) {
+			if (loc.getBlockX() != 0 && loc.getBlockY() != 0 && loc.getBlockZ() != 0) {
+				return String.format("[Bed] x:%d, y:%d, z:%d", (int) loc.getX(), (int) loc.getY(), (int) loc.getZ());
+			} else {
+				return String.format("BedSpawn coords not avaible");
+			}
 		}
+		return String.format("BedSpawn coords not avaible");
 	}
 }
