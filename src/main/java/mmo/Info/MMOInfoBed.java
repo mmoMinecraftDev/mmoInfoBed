@@ -68,7 +68,7 @@ public class MMOInfoBed extends MMOPlugin implements Listener  {
 				Label label = (Label) new GenericLabel(getBedCoords(player)).setResize(true).setFixed(true);
 				widgets.put(player, label);
 				event.setWidget(plugin, label);
-				event.setIcon("map.png");
+				event.setIcon("bed.png");
 			} else {
 				event.setCancelled(true);
 			}
@@ -79,11 +79,11 @@ public class MMOInfoBed extends MMOPlugin implements Listener  {
 		Location loc = player.getBedSpawnLocation();
 		if (player.getBedSpawnLocation()!= null) {
 			if (loc.getBlockX() != 0 && loc.getBlockY() != 0 && loc.getBlockZ() != 0) {
-				return String.format("[Bed] x:%d, y:%d, z:%d", (int) loc.getX(), (int) loc.getY(), (int) loc.getZ());
+				return String.format("["+loc.getWorld().getName()+"] x:%d, y:%d, z:%d", (int) loc.getX(), (int) loc.getY(), (int) loc.getZ());
 			} else {
-				return String.format(" BedSpawn coords not avaible");
+				return String.format("Bed location not avaible");
 			}
 		}
-		return String.format(" BedSpawn coords not avaible");
+		return String.format("Bed location not avaible");
 	}
 }
